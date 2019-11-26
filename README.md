@@ -17,6 +17,11 @@ http://localhost:8080/actuator/health
 http://localhost:8080/actuator/prometheus
 ```
 
+Run the tests as a docker container:
+```
+docker run -v "$(pwd):/java-app" -w /java-app openjdk:11-jdk-slim "./gradlew" --no-daemon test
+```
+
 #### Prometheus and Grafana with Docker
 
 To make containers visible to each other, they should run in the same Docker network.
