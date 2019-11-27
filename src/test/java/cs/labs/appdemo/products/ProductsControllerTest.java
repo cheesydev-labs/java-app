@@ -25,13 +25,13 @@ public class ProductsControllerTest {
     @Test
     public void getProductById() throws Exception {
         MockHttpServletResponse response = mockMvc
-                .perform(get("/products/10"))
+                .perform(get("/products/11"))
                 .andExpect(status().isOk())
                 .andReturn().getResponse();
 
         Product returnedProduct = new ObjectMapper()
                 .readValue(response.getContentAsByteArray(), Product.class);
 
-        assertThat(returnedProduct.getId()).isEqualTo("10");
+        assertThat(returnedProduct.getId()).isEqualTo("11");
     }
 }
